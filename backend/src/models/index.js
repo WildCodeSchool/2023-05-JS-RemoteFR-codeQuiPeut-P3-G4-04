@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 require("dotenv").config()
 
 const mysql = require("mysql2/promise")
@@ -30,13 +31,37 @@ pool.getConnection().catch(() => {
 const models = {}
 
 const ItemManager = require("./ItemManager")
-const CharactersManager = require("./CharactersManager")
+const ProductManager = require("./ProductManager")
+const OrderManager = require("./OrderManager")
+const PanierManager = require("./PanierManager")
+const Order_detailManager = require("./Order_detailManager")
+const CommentManager = require("./CommentManager")
+const CategoryManager = require("./CategoryManager")
+const UserManager = require("./UserManager")
 
 models.item = new ItemManager()
 models.item.setDatabase(pool)
 
-models.characters = new CharactersManager()
-models.characters.setDatabase(pool)
+models.product = new ProductManager()
+models.product.setDatabase(pool)
+
+models.order = new OrderManager()
+models.order.setDatabase(pool)
+
+models.panier = new PanierManager()
+models.panier.setDatabase(pool)
+
+models.order_detail = new Order_detailManager()
+models.order_detail.setDatabase(pool)
+
+models.comment = new CommentManager()
+models.comment.setDatabase(pool)
+
+models.category = new CategoryManager()
+models.category.setDatabase(pool)
+
+models.user = new UserManager()
+models.user.setDatabase(pool)
 
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model

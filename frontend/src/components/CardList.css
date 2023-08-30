@@ -1,0 +1,38 @@
+.card-list-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; /* Espacement depuis le haut de la page */
+  height: 100vh; /* Centrer verticalement */
+}
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Espacement réduit entre les cartes */
+  justify-content: center; /* Centrer les cartes horizontalement */
+}
+
+.card {
+  border: 1px solid #2fddf0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #e2dfdf;
+  text-align: center;
+  width: 250px;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+
+
+

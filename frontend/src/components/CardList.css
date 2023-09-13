@@ -35,9 +35,9 @@
 }
 */
 
+/*********************************/
 
-
-
+/*
 .card-list-container {
   display: flex;
   flex-wrap: wrap;
@@ -83,13 +83,13 @@
 
 .add-to-cart-button,
 .delete-button {
-  padding: 6px 12px; /* Ajustez les valeurs de rembourrage selon vos préférences */
+  padding: 6px 12px;  Ajustez les valeurs de rembourrage selon vos préférences 
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s;
-  font-size: 14px; /* Ajustez la taille de la police */
-  flex: 1; /* Partager l'espace disponible entre les boutons */
+  font-size: 14px;  Ajustez la taille de la police 
+  flex: 1;  Partager l'espace disponible entre les boutons 
 }
 
 .add-to-cart-button {
@@ -137,4 +137,107 @@
   margin-bottom: 5px;
   font-size: 16px;
 }
+*/
 
+
+/* Styles pour le composant CardList */
+
+.card-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.card {
+  border: 1px solid #2fddf0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #e2dfdf;
+  text-align: center;
+  width: 250px;
+  margin: 10px;
+}
+
+.card-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.card-name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.add-to-cart-button,
+.buy-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
+  font-size: 16px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.add-to-cart-button {
+  background-color: #2fddf0;
+  color: white;
+}
+
+.buy-button {
+  background-color: #36a832;
+  color: white;
+}
+
+.add-to-cart-button:hover {
+  background-color: #12fcfc;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.buy-button:hover {
+  background-color: #2a7f25;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.cart-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cart-summary h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.cart-summary ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart-summary li {
+  margin-bottom: 5px;
+  font-size: 16px;
+}

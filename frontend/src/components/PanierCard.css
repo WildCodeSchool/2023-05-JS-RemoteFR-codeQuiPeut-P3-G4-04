@@ -1,5 +1,4 @@
-/* Styles pour le composant CardList */
-
+/* Styles pour le composant CardPanier */
 .card-list-container {
   display: flex;
   flex-wrap: wrap;
@@ -43,8 +42,8 @@
   margin-top: 15px;
 }
 
-.add-to-cart-button,
-.buy-button {
+.acheter-button,
+.supprimer-button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
@@ -55,24 +54,24 @@
   margin-top: 10px;
 }
 
-.add-to-cart-button {
-  background-color: #2a8795;
+.acheter-button {
+  background-color: #2fddf0;
   color: white;
 }
 
-.buy-button {
-  background-color: #F4B346;
+.supprimer-button {
+  background-color: #f25959;
   color: white;
 }
 
-.add-to-cart-button:hover {
-  background-color: #29bdbd;
+.acheter-button:hover {
+  background-color: #12fcfc;
   color: #fff;
   transform: scale(1.05);
 }
 
-.buy-button:hover {
-  background-color: #caae0c;
+.supprimer-button:hover {
+  background-color: #f60a0a;
   color: #fff;
   transform: scale(1.05);
 }

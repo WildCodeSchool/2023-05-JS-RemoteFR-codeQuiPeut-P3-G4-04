@@ -1,70 +1,35 @@
+// eslint-disable-next-line no-unused-vars
 import { useState, useEffect } from "react"
+// eslint-disable-next-line no-unused-vars
 import axios from "axios"
-import "./CardList.css" // Assurez-vous d'importer votre fichier CSS
+import Produits from "../pages/Produits"
+// import "./CardList.css"
 
 export default function CardList() {
-  const [products, setProducts] = useState([])
+  // eslint-disable-next-line no-unused-vars
   const [cart, setCart] = useState([])
+  // eslint-disable-next-line no-unused-vars
+  const [products, setProducts] = useState([])
 
+  const AuClick = (product) => {
+    // eslint-disable-next-line no-restricted-syntax
+    console.log(product)
+  }
   useEffect(() => {
     axios
       .get("http://localhost:4242/product")
-      .then((res) => setProducts(res.data))
-      .catch((error) => console.error("Error fetching products:", error))
-  }, [])
-
-  const handleAddToCart = (productId) => {
-    const productToAdd = products.find((product) => product.id === productId)
-    setCart((prevCart) => [...prevCart, productToAdd])
-  }
-
-  const handleBuy = (productId) => {
-    // eslint-disable-next-line no-unused-vars
-    const productToRemove = cart.find((product) => product.id === productId)
-    setCart((prevCart) =>
-      prevCart.filter((product) => product.id !== productId)
-    )
-
-    // Ajoutez ici la logique pour effectuer l'achat, par exemple, envoyer une requête au serveur
-    // pour confirmer l'achat du produit.
-  }
+      // eslint-disable-next-line no-restricted-syntax
+      .then((res) => console.log("Response de l'API", res.data))
+  }).catch(() => {
+    // eslint-disable-next-line no-undef
+    console.error("Error lors de la récupération des des Produits", error)
+  })
 
   return (
-    <div className="card-list-container">
-      <div className="card-group">
-        {products.map((product) => (
-          <div className="card" key={product.id}>
-            <img
-              className="card-image"
-              src={product.image}
-              alt={product.name}
-            />
-            <p className="card-name">{product.name}</p>
-            <div className="buttons">
-              <button
-                className="add-to-cart-button"
-                onClick={() => handleAddToCart(product.id)}
-              >
-                Ajouter au panier
-              </button>
-              <button
-                className="buy-button" // Bouton "Acheter cet article"
-                onClick={() => handleBuy(product.id)} // Utilise la fonction handleBuy
-              >
-                Acheter cet article
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="cart-summary">
-        <h2>Résumé du panier</h2>
-        <ul>
-          {cart.map((product) => (
-            <li key={product.id}>{product.name}</li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <section>
+      {Produits.map((product) => (
+        <Produits key={product.id} product={product} AuClick={AuClick} />
+      ))}
+    </section>
   )
 }
